@@ -1,17 +1,15 @@
-//
-//  RPSTCAApp.swift
-//  RPSTCA
-//
-//  Created by Michael Welker on 2023-10-14.
-//
 
+import ComposableArchitecture
 import SwiftUI
 
 @main
 struct RPSTCAApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store.init(
+                initialState: Application.State.init(),
+                reducer: { Application() })
+            )
         }
     }
 }
