@@ -12,7 +12,18 @@
 		A27147722ADAEC48004B4D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27147712ADAEC48004B4D86 /* Assets.xcassets */; };
 		A27147752ADAEC48004B4D86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27147742ADAEC48004B4D86 /* Preview Assets.xcassets */; };
 		A271477D2ADAEC68004B4D86 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A271477C2ADAEC68004B4D86 /* ComposableArchitecture */; };
+		A2A709F12ADEDCEA006B81EE /* RPSTCATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A709F02ADEDCEA006B81EE /* RPSTCATests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2A709F22ADEDCEA006B81EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A27147622ADAEC46004B4D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A27147692ADAEC46004B4D86;
+			remoteInfo = RPSTCA;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A271476A2ADAEC46004B4D86 /* RPSTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPSTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +31,8 @@
 		A271476F2ADAEC46004B4D86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A27147712ADAEC48004B4D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A27147742ADAEC48004B4D86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A2A709EE2ADEDCEA006B81EE /* RPSTCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPSTCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A709F02ADEDCEA006B81EE /* RPSTCATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSTCATests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2A709EB2ADEDCEA006B81EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				A271476C2ADAEC46004B4D86 /* RPSTCA */,
+				A2A709EF2ADEDCEA006B81EE /* RPSTCATests */,
 				A271476B2ADAEC46004B4D86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				A271476A2ADAEC46004B4D86 /* RPSTCA.app */,
+				A2A709EE2ADEDCEA006B81EE /* RPSTCATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +89,14 @@
 				A27147742ADAEC48004B4D86 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A2A709EF2ADEDCEA006B81EE /* RPSTCATests */ = {
+			isa = PBXGroup;
+			children = (
+				A2A709F02ADEDCEA006B81EE /* RPSTCATests.swift */,
+			);
+			path = RPSTCATests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +122,24 @@
 			productReference = A271476A2ADAEC46004B4D86 /* RPSTCA.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A2A709ED2ADEDCEA006B81EE /* RPSTCATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A709F42ADEDCEA006B81EE /* Build configuration list for PBXNativeTarget "RPSTCATests" */;
+			buildPhases = (
+				A2A709EA2ADEDCEA006B81EE /* Sources */,
+				A2A709EB2ADEDCEA006B81EE /* Frameworks */,
+				A2A709EC2ADEDCEA006B81EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2A709F32ADEDCEA006B81EE /* PBXTargetDependency */,
+			);
+			name = RPSTCATests;
+			productName = RPSTCATests;
+			productReference = A2A709EE2ADEDCEA006B81EE /* RPSTCATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -104,6 +152,10 @@
 				TargetAttributes = {
 					A27147692ADAEC46004B4D86 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					A2A709ED2ADEDCEA006B81EE = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A27147692ADAEC46004B4D86;
 					};
 				};
 			};
@@ -124,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				A27147692ADAEC46004B4D86 /* RPSTCA */,
+				A2A709ED2ADEDCEA006B81EE /* RPSTCATests */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +188,13 @@
 			files = (
 				A27147752ADAEC48004B4D86 /* Preview Assets.xcassets in Resources */,
 				A27147722ADAEC48004B4D86 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A709EC2ADEDCEA006B81EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +210,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2A709EA2ADEDCEA006B81EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A709F12ADEDCEA006B81EE /* RPSTCATests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2A709F32ADEDCEA006B81EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A27147692ADAEC46004B4D86 /* RPSTCA */;
+			targetProxy = A2A709F22ADEDCEA006B81EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A27147762ADAEC48004B4D86 /* Debug */ = {
@@ -330,6 +406,42 @@
 			};
 			name = Release;
 		};
+		A2A709F52ADEDCEA006B81EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5B8WS3LB9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlwelker.RPSTCATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPSTCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RPSTCA";
+			};
+			name = Debug;
+		};
+		A2A709F62ADEDCEA006B81EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5B8WS3LB9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlwelker.RPSTCATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPSTCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RPSTCA";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -347,6 +459,15 @@
 			buildConfigurations = (
 				A27147792ADAEC48004B4D86 /* Debug */,
 				A271477A2ADAEC48004B4D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A709F42ADEDCEA006B81EE /* Build configuration list for PBXNativeTarget "RPSTCATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A709F52ADEDCEA006B81EE /* Debug */,
+				A2A709F62ADEDCEA006B81EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

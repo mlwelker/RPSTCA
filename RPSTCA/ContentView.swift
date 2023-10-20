@@ -1,8 +1,13 @@
 
+// HW: read docs on dependencies library
+// goal: replace randomHand injection with a dependency you create
+
 import ComposableArchitecture
 import SwiftUI
 
-struct Application { }
+struct Application { 
+    let randomHand: () -> Hand
+}
 
 extension Application: Reducer {
     struct State: Equatable {
@@ -12,9 +17,7 @@ extension Application: Reducer {
     }
     
     enum Action: Equatable {
-        case rockButtonTapped
-        case paperButtonTapped
-        case scissorsButtonTapped
+        case playerHandTapped(Hand)
         case goButtonTapped
         case resetButtonTapped
     }
@@ -22,14 +25,10 @@ extension Application: Reducer {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .rockButtonTapped:
-                state.playerHand = .rock
-                return .none
-            case .paperButtonTapped:
-                state.playerHand = .paper
-                return .none
-            case .scissorsButtonTapped:
-                state.playerHand = .scissors
+            case .playerHandTapped(let selectedHand):
+                if !state.gameOver {
+                    state.playerHand = selectedHand
+                }
                 return .none
             case .goButtonTapped:
                 state.cpuHand = randomHand()
@@ -52,7 +51,7 @@ enum Hand: String {
     case hidden = "?"
 }
 
-func randomHand() -> Hand {
+func liveRandomHand() -> Hand {
     let hands: [Hand] = [.rock, .paper, .scissors]
     return hands.randomElement()!
 }
@@ -105,36 +104,36 @@ struct ContentView: View {
                 HStack {
                     if viewStore.playerHand == .rock {
                         Button("✊") {
-                            viewStore.send(.rockButtonTapped)
+                            viewStore.send(.playerHandTapped(.rock))
                         }
                         .buttonStyle(.borderedProminent)
                     } else {
                         Button("✊") {
-                            viewStore.send(.rockButtonTapped)
+                            viewStore.send(.playerHandTapped(.rock))
                         }
                         .buttonStyle(.bordered)
                     }
                     
                     if viewStore.playerHand == .paper {
                         Button("✋") {
-                            viewStore.send(.paperButtonTapped)
+                            viewStore.send(.playerHandTapped(.paper))
                         }
                         .buttonStyle(.borderedProminent)
                     } else {
                         Button("✋") {
-                            viewStore.send(.paperButtonTapped)
+                            viewStore.send(.playerHandTapped(.paper))
                         }
                         .buttonStyle(.bordered)
                     }
                     
                     if viewStore.playerHand == .scissors {
                         Button("✌️") {
-                            viewStore.send(.scissorsButtonTapped)
+                            viewStore.send(.playerHandTapped(.scissors))
                         }
                         .buttonStyle(.borderedProminent)
                     } else {
                         Button("✌️") {
-                            viewStore.send(.scissorsButtonTapped)
+                            viewStore.send(.playerHandTapped(.scissors))
                         }
                         .buttonStyle(.bordered)
                     }
@@ -172,6 +171,6 @@ struct ContentView: View {
 #Preview {
     ContentView(store: Store.init(
         initialState: Application.State.init(),
-        reducer: { Application() })
+        reducer: { Application(randomHand: { liveRandomHand() }) })
     )
 }

@@ -8,7 +8,7 @@ struct RPSTCAApp: App {
         WindowGroup {
             ContentView(store: Store.init(
                 initialState: Application.State.init(),
-                reducer: { Application() })
+                reducer: { Application(randomHand: liveRandomHand) })
             )
         }
     }
